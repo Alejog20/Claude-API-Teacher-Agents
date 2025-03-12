@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60">
+  <!-- Fondo del logo -->
+  <rect x="5" y="5" width="50" height="50" rx="10" fill="#3b82f6" />
+  
+  <!-- Libros apilados -->
+  <rect x="15" y="35" width="30" height="6" rx="1" fill="#eff6ff" />
+  <rect x="17" y="29" width="30" height="6" rx="1" fill="#dbeafe" transform="rotate(-3, 17, 29)" />
+  <rect x="16" y="23" width="30" height="6" rx="1" fill="#bfdbfe" transform="rotate(2, 16, 23)" />
+  
+  <!-- Lámpara de conocimiento -->
+  <circle cx="30" cy="15" r="5" fill="#f0f9ff" />
+  <path d="M30 20 L30 28" stroke="#f0f9ff" stroke-width="2" />
+  <path d="M24 14 L36 14" stroke="#f0f9ff" stroke-width="2" />
+  <path d="M25 18 L35 18" stroke="#f0f9ff" stroke-width="2" />
+  
+  <!-- Texto del logo -->
+  <text x="65" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#3b82f6">EduAssist</text>
+  <text x="65" y="50" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Aprendizaje Personalizado</text>
+</svg>

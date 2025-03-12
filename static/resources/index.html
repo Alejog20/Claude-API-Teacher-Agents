@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plataforma de Aprendizaje Personalizado</title>
+  
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="static/css/variables.css">
+  <link rel="stylesheet" href="static/css/main.css">
+  <link rel="stylesheet" href="static/css/responsive.css">
+  
+  <!-- Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="static/resources/img/favicon.ico" type="image/x-icon">
+</head>
+<body data-page="dashboard">
+  <!-- Contenedor principal -->
+  <div class="app-container">
+    <!-- Barra lateral -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <img src="static/resources/img/logo.svg" alt="Logo" class="sidebar-logo">
+        <div class="sidebar-title">EduAssist</div>
+      </div>
+      
+      <div class="sidebar-content">
+        <div class="nav-section">
+          <div class="nav-section-title">Principal</div>
+          <a href="/" class="nav-item active" data-page="dashboard">
+            <i class="fas fa-home nav-item-icon"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="/chat" class="nav-item" data-page="chat">
+            <i class="fas fa-comments nav-item-icon"></i>
+            <span>Asistente</span>
+          </a>
+        </div>
+        
+        <div class="nav-section">
+          <div class="nav-section-title">Aprendizaje</div>
+          <a href="/subjects" class="nav-item" data-page="subjects">
+            <i class="fas fa-book nav-item-icon"></i>
+            <span>Materias</span>
+          </a>
+          <a href="/lessons" class="nav-item" data-page="lessons">
+            <i class="fas fa-book-open nav-item-icon"></i>
+            <span>Lecciones</span>
+          </a>
+          <a href="/exercises" class="nav-item" data-page="exercises">
+            <i class="fas fa-pencil-alt nav-item-icon"></i>
+            <span>Ejercicios</span>
+          </a>
+          <a href="/evaluations" class="nav-item" data-page="evaluations">
+            <i class="fas fa-clipboard-check nav-item-icon"></i>
+            <span>Evaluaciones</span>
+          </a>
+        </div>
+        
+        <div class="nav-section">
+          <div class="nav-section-title">Progreso</div>
+          <a href="/progress" class="nav-item" data-page="progress">
+            <i class="fas fa-chart-line nav-item-icon"></i>
+            <span>Mi Progreso</span>
+          </a>
+          <a href="/achievements" class="nav-item" data-page="achievements">
+            <i class="fas fa-trophy nav-item-icon"></i>
+            <span>Logros</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Contenido principal -->
+    <div class="main-content">
+      <div class="topbar">
+        <div class="topbar-title">Dashboard</div>
+        
+        <div class="topbar-actions flex items-center gap-4">
+          <button class="dark-mode-toggle p-2 rounded-full bg-secondary" aria-pressed="false">
+            <i class="fas fa-moon"></i>
+          </button>
+          
+          <div class="user-dropdown">
+            <div class="user-dropdown-toggle">
+              <div class="user-avatar">ES</div>
+              <span class="hidden md:inline">Estudiante</span>
+              <i class="fas fa-chevron-down text-secondary ml-1"></i>
+            </div>
+            
+            <div class="user-dropdown-menu hidden absolute right-0 mt-2 w-48 bg-white rounded shadow-md">
+              <a href="/profile" class="block p-3 hover:bg-bg-hover">
+                <i class="fas fa-user mr-2"></i> Mi Perfil
+              </a>
+              <a href="/settings" class="block p-3 hover:bg-bg-hover">
+                <i class="fas fa-cog mr-2"></i> Configuración
+              </a>
+              <hr class="border-t border-border-color">
+              <a href="/logout" class="block p-3 hover:bg-bg-hover text-danger">
+                <i class="fas fa-sign-out-alt mr-2"></i> Cerrar Sesión
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="content-container">
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+          <!-- Filtros -->
+          <div class="filters-container flex justify-between mb-5">
+            <div class="dashboard-title">
+              <h1 class="text-2xl font-bold">Bienvenido de nuevo, Estudiante</h1>
+              <p class="text-secondary">Aquí está tu resumen de aprendizaje</p>
+            </div>
+            
+            <div class="filters flex gap-3">
+              <div class="time-range-filter"></div>
+              <div class="subject-filter"></div>
+            </div>
+          </div>
+          
+          <!-- Información del Usuario -->
+          <div class="user-info mb-5"></div>
+          
+          <!-- Tarjetas de Progreso -->
+          <div class="progress-container dashboard-grid mb-5"></div>
+          
+          <!-- Recomendaciones -->
+          <div class="recommendations-container mb-5"></div>
+          
+          <!-- Actividad Reciente -->
+          <div class="recent-activity-container mb-5"></div>
+          
+          <!-- Hábitos de Estudio -->
+          <div class="study-habits-container mb-5"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Botón para mostrar/ocultar la barra lateral en móviles -->
+  <button class="sidebar-toggle">
+    <i class="fas fa-bars"></i>
+  </button>
+  
+  <!-- Scripts -->
+  <script src="static/js/main.js"></script>
+  <script src="static/js/dashboard.js"></script>
+</body>
+</html>
