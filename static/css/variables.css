@@ -1,0 +1,69 @@
+:root {
+    /* Colores principales - paleta serena */
+    --primary: #3b82f6;         /* Azul cielo sereno */
+    --primary-dark: #2563eb;    /* Azul más oscuro para hover */
+    --primary-light: #93c5fd;   /* Azul claro para fondos sutiles */
+    --primary-transparent: rgba(59, 130, 246, 0.1); /* Para fondos y selecciones */
+    
+    --success: #10b981;         /* Verde suave */
+    --warning: #f59e0b;         /* Ámbar cálido */
+    --danger: #ef4444;          /* Rojo suavizado */
+    
+    /* Colores de texto */
+    --text-primary: #1f2937;    /* Casi negro para texto principal */
+    --text-secondary: #6b7280;  /* Gris para texto secundario */
+    --text-light: #9ca3af;      /* Gris más claro para texto terciario */
+    
+    /* Colores de fondo */
+    --bg-primary: #f9fafb;      /* Blanco roto para fondo principal */
+    --bg-secondary: #f3f4f6;    /* Gris muy claro para fondos secundarios */
+    --bg-sidebar: #ffffff;      /* Blanco para barra lateral */
+    --bg-hover: #f3f4f6;        /* Gris claro para efectos hover */
+    --bg-input: #ffffff;        /* Blanco para inputs */
+    
+    /* Colores de borde */
+    --border-color: #e5e7eb;    /* Gris claro para bordes */
+    
+    /* Gradiente de fondo sereno */
+    --bg-gradient: linear-gradient(120deg, #f0f9ff 0%, #e0f2fe 100%);
+    
+    /* Sombras */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    /* Bordes */
+    --border-radius: 0.5rem;    /* Radio de borde para elementos */
+    
+    /* Transiciones */
+    --transition-slow: 0.3s ease;
+    --transition-normal: 0.2s ease;
+    --transition-fast: 0.1s ease;
+    
+    /* Espaciado */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 1rem;
+    --space-4: 1.5rem;
+    --space-5: 2rem;
+    --space-6: 3rem;
+  }
+  
+  /* Tema oscuro (se puede activar con .dark-theme en el body) */
+  .dark-theme {
+    --primary: #60a5fa;         /* Azul más claro en tema oscuro */
+    
+    --text-primary: #f9fafb;    /* Blanco roto para texto principal */
+    --text-secondary: #d1d5db;  /* Gris claro para texto secundario */
+    --text-light: #9ca3af;      /* Gris más oscuro para texto terciario */
+    
+    --bg-primary: #111827;      /* Gris muy oscuro para fondo principal */
+    --bg-secondary: #1f2937;    /* Gris oscuro para fondos secundarios */
+    --bg-sidebar: #0f172a;      /* Azul muy oscuro para barra lateral */
+    --bg-hover: #4b5563;        /* Gris medio para efectos hover */
+    --bg-input: #374151;        /* Gris oscuro para inputs */
+    
+    --border-color: #374151;    /* Gris oscuro para bordes */
+    
+    --bg-gradient: linear-gradient(120deg, #0f172a 0%, #1e293b 100%);
+  }
