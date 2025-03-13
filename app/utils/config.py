@@ -1,25 +1,38 @@
-# Crea el archivo app/utils/config.py
 import os
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
+from dotenv import load_dotenv
+
+# Cargar variables de entorno desde archivo .env
+load_dotenv()
 
 class Settings(BaseSettings):
-    """Configuración de la aplicación."""
+    # Información de la aplicación
+    APP_NAME: str = "Plataforma de Aprendizaje Personalizado"
+    APP_VERSION: str = "1.0.0"
     
-    # Configuración de la base de datos
-    DATABASE_URL: str = "sqlite:///./teachassistant.db"
+    # Base de datos
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite:///./app.db")
     
-    # Configuración de la API de Claude
-    CLAUDE_API_KEY: str = ""
-    CLAUDE_MODEL: str = "claude-3-7-sonnet-20250219"
+    # API de Claude
+    CLAUDE_API_KEY: str = os.getenv("CLAUDE_API_KEY", "")
+    CLAUDE_MODEL: str = os.getenv("CLAUDE_MODEL", "claude-3-7-sonnet-20250219")
     
-    # Configuración del logging
-    LOG_LEVEL: str = "INFO"
+    # Seguridad
+    SECRET_KEY: str = os.getenv("SECRET_KEY", "supersecretkey")
+    ALGORITHM: str = "HS256"
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24  # 24 horas
     
-    # Otras configuraciones
-    APP_NAME: str = "TeachAssistant"
+    # Configuración de logs
+    LOG_LEVEL: str = os.getenv("LOG_LEVEL", "INFO")
     
+    # Sistema de colas
+    QUEUE_SYSTEM: str = os.getenv("QUEUE_SYSTEM", "memory")  # memory, redis
+    REDIS_URL: str = os.getenv("REDIS_URL", "redis://localhost:6379/0")
+    
+    DEBUG: bool = False
+
     class Config:
         env_file = ".env"
-        case_sensitive = False
+        env_file_encoding = "utf-8"
 
 settings = Settings()

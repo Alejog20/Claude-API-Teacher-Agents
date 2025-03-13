@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asistente de Aprendizaje | Plataforma de Aprendizaje Personalizado</title>
+  
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="static/css/variables.css">
+  <link rel="stylesheet" href="static/css/main.css">
+  <link rel="stylesheet" href="static/css/responsive.css">
+  
+  <!-- Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="static/resources/img/favicon.ico" type="image/x-icon">
+  
+  <style>
+    /* Estilos adicionales específicos para la página de chat */
+    .typing-dots {
+      display: flex;
+      gap: 4px;
+      padding: 10px;
+    }
+    
+    .typing-dots span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--text-secondary);
+      display: inline-block;
+      animation: typing-bounce 1.4s infinite ease-in-out both;
+    }
+    
+    .typing-dots span:nth-child(1) {
+      animation-delay: -0.32s;
+    }
+    
+    .typing-dots span:nth-child(2) {
+      animation-delay: -0.16s;
+    }
+    
+    @keyframes typing-bounce {
+      0%, 80%, 100% { transform: scale(0); }
+      40% { transform: scale(1); }
+    }
+    
+    .agent-selector-container {
+      margin-bottom: 1rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .agent-selector {
+      padding: 0.5rem;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-input);
+      color: var(--text-primary);
+      font-size: 0.875rem;
+      width: 100%;
+      max-width: 300px;
+    }
+  </style>
+</head>
+<body data-page="chat">
+  <!-- Contenedor principal -->
+  <div class="app-container">
+    <!-- Barra lateral -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <img src="static/resources/img/logo.svg" alt="Logo" class="sidebar-logo">
+        <div class="sidebar-title">EduAssist</div>
+      </div>
+      
+      <div class="sidebar-content">
+        <div class="nav-section">
+          <div class="nav-section-title">Principal</div>
+          <a href="/" class="nav-item" data-page="dashboard">
+            <i class="fas fa-home nav-item-icon"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="/chat" class="nav-item active" data-page="chat">
+            <i class="fas fa-comments nav-item-icon"></i>
+            <span>Asistente</span>
+          </a>
+        </div>
+        
+        <div class="nav-section">
+          <div class="nav-section-title">Aprendizaje</div>
+          <a href="/subjects" class="nav-item" data-page="subjects">
+            <i class="fas fa-book nav-item-icon"></i>
+            <span>Materias</span>
+          </a>
+          <a href="/lessons" class="nav-item" data-page="lessons">
+            <i class="fas fa-book-open nav-item-icon"></i>
+            <span>Lecciones</span>
+          </a>
+          <a href="/exercises" class="nav-item" data-page="exercises">
+            <i class="fas fa-pencil-alt nav-item-icon"></i>
+            <span>Ejercicios</span>
+          </a>
+          <a href="/evaluations" class="nav-item" data-page="evaluations">
+            <i class="fas fa-clipboard-check nav-item-icon"></i>
+            <span>Evaluaciones</span>
+          </a>
+        </div>
+        
+        <div class="nav-section">
+          <div class="nav-section-title">Progreso</div>
+          <a href="/progress" class="nav-item" data-page="progress">
+            <i class="fas fa-chart-line nav-item-icon"></i>
+            <span>Mi Progreso</span>
+          </a>
+          <a href="/achievements" class="nav-item" data-page="achievements">
+            <i class="fas fa-trophy nav-item-icon"></i>
+            <span>Logros</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Contenido principal -->
+    <div class="main-content">
+      <div class="topbar">
+        <div class="topbar-title">Asistente de Aprendizaje</div>
+        
+        <div class="topbar-actions flex items-center gap-4">
+          <button class="dark-mode-toggle p-2 rounded-full bg-secondary" aria-pressed="false">
+            <i class="fas fa-moon"></i>
+          </button>
+          
+          <div class="user-dropdown">
+            <div class="user-dropdown-toggle">
+              <div class="user-avatar">ES</div>
+              <span class="hidden md:inline">Estudiante</span>
+              <i class="fas fa-chevron-down text-secondary ml-1"></i>
+            </div>
+            
+            <div class="user-dropdown-menu hidden absolute right-0 mt-2 w-48 bg-white rounded shadow-md">
+              <a href="/profile" class="block p-3 hover:bg-bg-hover">
+                <i class="fas fa-user mr-2"></i> Mi Perfil
+              </a>
+              <a href="/settings" class="block p-3 hover:bg-bg-hover">

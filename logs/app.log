@@ -1,0 +1,5 @@
+2025-03-13 01:08:28,686 - security - ERROR - Error al generar token: module 'jwt' has no attribute 'encode'
+2025-03-13 01:08:28,774 - security - ERROR - Error al generar token: module 'jwt' has no attribute 'encode'
+2025-03-13 01:08:28,782 - security - ERROR - Error al generar token: module 'jwt' has no attribute 'encode'
+2025-03-13 01:12:45,214 - security - WARNING - Token expirado
+2025-03-13 01:12:45,222 - security - WARNING - Token inválido
